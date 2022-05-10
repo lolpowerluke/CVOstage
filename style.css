@@ -51,28 +51,31 @@ article > div {
   row-gap: 10px;
   box-sizing: border-box;
 }
-article > div > div {
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   overflow-y: auto;
 }
-article > div > div::-webkit-scrollbar {
+.list::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-article > div > div::-webkit-scrollbar-track,
-article > div > div::-webkit-scrollbar-thumb {
+.list::-webkit-scrollbar-track,
+.list::-webkit-scrollbar-thumb {
   background-clip: padding-box;
   border-radius: 7.5px;
   border-style: solid;
   border-width: 2px;
   border-color: transparent;
 }
-article > div > div::-webkit-scrollbar-track {
+.list::-webkit-scrollbar-track {
   box-shadow: 0 0 3px var(--scroll-shadow);
   border-width: initial;
   border: 0px solid transparent;
   background-color: var(--scroll-track);
 }
-article > div > div::-webkit-scrollbar-thumb {
+.list::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 4px;
   background-color: var(--scroll-thumb);
