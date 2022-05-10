@@ -2,6 +2,7 @@
 :root {
   --box-shadow: rgb(100, 100, 100);
   --bg-1: rgb(93, 196, 255);
+  --bg-2: rgb(60, 184, 255);
   --scroll-track: rgb(0, 143, 226);
   --scroll-thumb: rgb(0, 105, 153);
   --scroll-shadow: rgb(54, 54, 54);
@@ -101,4 +102,26 @@ button:last-of-type {
 button:hover {
   background-color: rgba(9, 74, 100, 0.466);
   box-shadow: 0 0 3px var(--box-shadow);
+}
+.tool.card {
+  display: flex;
+  text-align: center;
+  column-gap: 10px;
+  flex: 1 0 200px;
+  max-width: 700px;
+  background-color: var(--bg-2);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--box-shadow);
+  height: 200px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.tool.card img {
+  height: 190px;
+  border-radius: 5px;
+}
+.tool.card p {
+  font-size: 18px;
 }
