@@ -70,6 +70,7 @@ article > div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   overflow-y: auto;
 }
 .list::-webkit-scrollbar {
@@ -125,7 +126,7 @@ button:hover {
   display: flex;
   text-align: center;
   column-gap: 10px;
-  flex: 1 0 200px;
+  flex: 1 0 500px;
   max-width: 700px;
   background-color: var(--bg-2);
   padding: 5px;
