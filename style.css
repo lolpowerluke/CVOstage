@@ -2,6 +2,9 @@
 :root {
   --box-shadow: rgb(100, 100, 100);
   --bg-1: rgb(93, 196, 255);
+  --scroll-track: rgb(0, 143, 226);
+  --scroll-thumb: rgb(0, 105, 153);
+  --scroll-shadow: rgb(54, 54, 54);
 }
 * {
   font-family: 'Oxanium', cursive;
@@ -33,7 +36,55 @@ header {
   box-shadow: 0 0 5px var(--box-shadow);
 }
 article {
-  width: 90vw;
+  width: calc(100vw - 150px);
+  height: calc(96vh - 80px - 40px);
+}
+article > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 10px 5px 10px 10px;
+  margin-right: 5px;
+  row-gap: 10px;
+  box-sizing: border-box;
+}
+article > div > div {
+  overflow-y: auto;
+}
+article > div > div::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+article > div > div::-webkit-scrollbar-track,
+article > div > div::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border-radius: 7.5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+}
+article > div > div::-webkit-scrollbar-track {
+  box-shadow: 0 0 3px var(--scroll-shadow);
+  border-width: initial;
+  border: 0px solid transparent;
+  background-color: var(--scroll-track);
+}
+article > div > div::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: var(--scroll-thumb);
+  cursor: move;
+}
+article > div > span {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 0 10px 0;
+  border-radius: 5px;
+  background-color: rgb(144, 161, 170);
+  box-shadow: 0 0 5px var(--box-shadow);
 }
 button {
   all: initial;
