@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <link href="style.css" rel="stylesheet">
+  <script src="functions.js"></script>
   <title>Home | Kies jouw online tool</title>
 </head>
-<body class="dark">
+<body class="dark" id="body">
   <header>
     <button onclick="location.href='subsites/keuze.html'">
       <span>Kies jouw online tool</span>
@@ -46,8 +47,8 @@
     <button>
       <span>Problemen? Stuur een mail</span>
     </button>
-    <button>
-      <span>switch to light mode</span>
+    <button onclick="darklight()">
+      <span id="darklightswitch">switch to light mode</span>
     </button>
   </footer>
 </body>
