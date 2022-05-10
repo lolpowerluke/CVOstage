@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 :root {
   --box-shadow: rgb(100, 100, 100);
-  --bg-1: rgb(93, 196, 255);
-  --bg-2: rgb(60, 184, 255);
   --scroll-track: rgb(0, 143, 226);
   --scroll-thumb: rgb(0, 105, 153);
   --scroll-shadow: rgb(54, 54, 54);
+}
+.dark {
+  --main-bg: rgb(27, 38, 44);
+  --bg-1: rgb(15, 76, 117);
+  --bg-2: rgb(50, 130, 184);
+  --btn-hover: rgb(50, 130, 184);
+}
+.light {
+  --main-bg: rgb(224, 252, 255);
+  --bg-1: rgb(144, 242, 255);
+  --bg-2: rgb(110, 182, 255);
+  --btn-hover: rgb(110, 182, 255);
 }
 * {
   font-family: 'Oxanium', cursive;
@@ -23,6 +33,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;
+  background-color: var(--main-bg);
 }
 footer,
 article,
@@ -35,6 +46,10 @@ header {
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0 0 5px var(--box-shadow);
+}
+footer,
+header {
+  color: white;
 }
 article {
   width: calc(100vw - 150px);
@@ -103,7 +118,7 @@ button:last-of-type {
   margin-right: 5px;
 }
 button:hover {
-  background-color: rgba(9, 74, 100, 0.466);
+  background-color: var(--btn-hover);
   box-shadow: 0 0 3px var(--box-shadow);
 }
 .tool.card {
