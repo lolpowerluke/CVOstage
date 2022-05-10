@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <link href="../style.css" rel="stylesheet">
+  <script src="../functions.js"></script>
   <title>Teams | Kies jouw online tool</title>
 </head>
-<body>
+<body class="dark" id="body">
   <header>
+    <button onclick="location.href='../home.html'">
+      <span>Home</span>
+    </button>
     <button onclick="location.href='../home.html'">
       <span>Home</span>
     </button>
@@ -19,7 +23,10 @@
   </article>
   <footer>
     <button>
-      <span>Problemen? Stuur een mail.</span>
+      <span>Problemen? Stuur een mail</span>
+    </button>
+    <button onclick="darklight()">
+      <span id="darklightswitch">switch to light mode</span>
     </button>
   </footer>
 </body>
