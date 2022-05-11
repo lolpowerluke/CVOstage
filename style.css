@@ -51,6 +51,10 @@ footer,
 header {
   color: white;
 }
+footer a {
+  width: 100%;
+  height: 100%;
+}
 article {
   width: calc(100vw - 150px);
   height: calc(96vh - 80px - 40px);
