@@ -9,12 +9,14 @@
   --main-bg: rgb(27, 38, 44);
   --bg-1: rgb(15, 76, 117);
   --bg-2: rgb(50, 130, 184);
+  --bg-3: rgb(187, 225, 250);
   --btn-hover: rgb(50, 130, 184);
 }
 .light {
   --main-bg: rgb(224, 252, 255);
   --bg-1: rgb(144, 242, 255);
   --bg-2: rgb(110, 182, 255);
+  --bg-3: rgb(112, 152, 218);
   --btn-hover: rgb(110, 182, 255);
 }
 * {
@@ -191,6 +193,16 @@ button:hover {
   height: 350px;
   border-radius: 5px;
 }
+.explantation li button {
+  background-color: var(--bg-3);
+  box-shadow: 0 0 5px var(--box-shadow);
+  width: fit-content;
+  align-self: center;
+}
+.list.choice {
+  display: flex;
+  flex-direction: column;
+}
 .list.choice .card {
   background-color: var(--bg-2);
   padding: 5px;
@@ -199,4 +211,6 @@ button:hover {
   box-shadow: 0 0 5px var(--box-shadow);
   font-size: 25px;
   box-sizing: border-box;
+  width: fit-content;
+  align-self: center;
 }
