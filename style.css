@@ -270,6 +270,7 @@ button:hover {
   box-shadow: 0 0 5px var(--box-shadow);
   width: fit-content;
   align-self: center;
+  margin-top: 7px;
 }
 .list.choice {
   display: flex;
