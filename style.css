@@ -23,11 +23,6 @@
   font-family: 'Oxanium', cursive !important;
   color: black;
 }
-body,
-html {
-  width: 99vw;
-  height: 96vh;
-}
 body {
   display: grid;
   grid-template-rows: 40px 1fr 40px;
@@ -190,17 +185,52 @@ button:hover {
   overflow-y: auto;
 }
 .explantation li {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
   column-gap: 10px;
   background-color: var(--bg-2);
   padding: 5px;
   border-radius: 10px;
   box-shadow: 0 0 5px var(--box-shadow);
-  height: 360px;
+  height: fit-content;
   width: 100%;
   box-sizing: border-box;
+}
+@media (max-width: 920px) {
+  .explantation li {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    row-gap: 10px;
+  }
+  .explantation li div {
+    grid-row: 1/2;
+  }
+  .explantation li img {
+    grid-row: 2/3;
+  }
+  .grayheader {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5px;
+  }
+  #body .grayheader > * {
+    justify-self: center;
+  }
+  .grayheader button.back {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0;
+  }
+  .grayheader span {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .grayheader button.offsite {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin: 0;
+  }
 }
 .explantation li div {
   width: 100%;
@@ -212,7 +242,7 @@ button:hover {
   margin-top: 10px;
 }
 .explantation li img {
-  height: 350px;
+  width: 100%;
   border-radius: 5px;
 }
 .explantation li button {
