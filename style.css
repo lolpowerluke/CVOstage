@@ -184,6 +184,9 @@ button:hover {
   box-sizing: border-box;
   overflow-y: auto;
 }
+.explantation.small-img li {
+  grid-template-columns: 200px 1fr;
+}
 .explantation li {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -197,16 +200,30 @@ button:hover {
   width: 100%;
   box-sizing: border-box;
 }
-@media (max-width: 920px) {
-  .explantation li {
+@media (max-width: 550px) {
+  .explantation.small-img li {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     row-gap: 10px;
   }
-  .explantation li div {
+  .explantation.small-img li div {
     grid-row: 1/2;
   }
-  .explantation li img {
+  body .explantation.small-img li img {
+    grid-row: 2/3;
+    width: 100%;
+  }
+}
+@media (max-width: 920px) {
+  .explantation:not(.small-img) li {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    row-gap: 10px;
+  }
+  .explantation:not(.small-img) li div {
+    grid-row: 1/2;
+  }
+  .explantation:not(.small-img) li img {
     grid-row: 2/3;
   }
   .grayheader {
@@ -244,6 +261,9 @@ button:hover {
 .explantation li img {
   width: 100%;
   border-radius: 5px;
+}
+.explantation.small-img li img {
+  width: 200px;
 }
 .explantation li button {
   background-color: var(--bg-3);
