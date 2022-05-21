@@ -151,7 +151,8 @@ button:hover {
   box-shadow: 0 0 3px var(--box-shadow);
 }
 .tool.card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
   column-gap: 10px;
   flex: 1 0 500px;
@@ -161,12 +162,12 @@ button:hover {
   margin: 5px;
   border-radius: 10px;
   box-shadow: 0 0 5px var(--box-shadow);
-  height: 200px;
+  height: fit-content;
   box-sizing: border-box;
   overflow: hidden;
 }
 .tool.card img {
-  height: 190px;
+  width: 100%;
   border-radius: 5px;
 }
 .tool.card p {
