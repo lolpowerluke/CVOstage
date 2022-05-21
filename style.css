@@ -22,6 +22,7 @@
 * {
   font-family: 'Oxanium', cursive !important;
   color: black;
+  transition: background-color .5s;
 }
 body {
   display: grid;
@@ -153,6 +154,7 @@ button:hover {
 .tool.card {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-self: stretch;
   text-align: center;
   column-gap: 10px;
   flex: 1 0 500px;
@@ -162,13 +164,14 @@ button:hover {
   margin: 5px;
   border-radius: 10px;
   box-shadow: 0 0 5px var(--box-shadow);
-  height: fit-content;
   box-sizing: border-box;
   overflow: hidden;
 }
 .tool.card img {
   width: 100%;
   border-radius: 5px;
+  align-self: center;
+  justify-self: center;
 }
 .tool.card p {
   font-size: 18px;

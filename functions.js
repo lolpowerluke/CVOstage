@@ -8,6 +8,7 @@ function checkDarkLightCookie() {
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
     document.cookie="dark; expires=" + tomorrow + "; path=/";
+    document.getElementById("body").className = "dark";
   }
 }
 function darklight() {
