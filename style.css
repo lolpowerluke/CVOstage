@@ -92,6 +92,7 @@ article > div {
   border-style: solid;
   border-width: 2px;
   border-color: transparent;
+  margin-top: 5px;
 }
 .explantation::-webkit-scrollbar-track,
 .list::-webkit-scrollbar-track {
