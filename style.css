@@ -119,6 +119,9 @@ article > div {
   background-color: rgb(144, 161, 170);
   box-shadow: 0 0 5px var(--box-shadow);
 }
+.grayheader.even {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .grayheader > * {
   width: fit-content;
 }
