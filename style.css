@@ -110,7 +110,7 @@ article > div {
 }
 .grayheader {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr auto;
   width: 100%;
   align-items: center;
   font-size: 20px;
