@@ -190,9 +190,11 @@ button:hover {
   box-sizing: border-box;
   overflow-y: auto;
 }
+.explantation.small-img > button,
 .explantation.small-img li {
   grid-template-columns: 200px 1fr;
 }
+.explantation > button,
 .explantation li {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -207,28 +209,34 @@ button:hover {
   box-sizing: border-box;
 }
 @media (max-width: 550px) {
+  .explantation.small-img > button,
   .explantation.small-img li {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     row-gap: 10px;
   }
+  .explantation.small-img > button div,
   .explantation.small-img li div {
     grid-row: 1/2;
   }
+  body .explantation.small-img > button img,
   body .explantation.small-img li img {
     grid-row: 2/3;
     width: 100%;
   }
 }
 @media (max-width: 920px) {
+  .explantation:not(.small-img) > button,
   .explantation:not(.small-img) li {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
     row-gap: 10px;
   }
+  .explantation:not(.small-img) > button div,
   .explantation:not(.small-img) li div {
     grid-row: 1/2;
   }
+  .explantation:not(.small-img) > button img,
   .explantation:not(.small-img) li img {
     grid-row: 2/3;
   }
@@ -260,14 +268,17 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
+.explantation > button p,
 .explantation li p {
   font-size: 18px;
   margin-top: 10px;
 }
+.explantation > button img,
 .explantation li img {
   width: 100%;
   border-radius: 5px;
 }
+.explantation.small-img > button img,
 .explantation.small-img li img {
   width: 200px;
 }
