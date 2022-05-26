@@ -190,10 +190,6 @@ button:hover {
   box-sizing: border-box;
   overflow-y: auto;
 }
-.explantation.small-img > button,
-.explantation.small-img li {
-  grid-template-columns: 200px 1fr;
-}
 .explantation > button,
 .explantation li {
   display: grid;
@@ -208,7 +204,13 @@ button:hover {
   width: 100%;
   box-sizing: border-box;
 }
+.explantation li.smallimg,
+.explantation.small-img > button,
+.explantation.small-img li {
+  grid-template-columns: 200px 1fr;
+}
 @media (max-width: 550px) {
+  .explantation li.smallimg,
   .explantation.small-img > button,
   .explantation.small-img li {
     grid-template-columns: 1fr;
