@@ -30,7 +30,6 @@ function checkDarkLightCookie() {
       switching = true;
     }
   }
-
 }
 function darklight() {
   if (document.getElementById("body").classList.contains('dark')) {
