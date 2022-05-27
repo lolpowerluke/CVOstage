@@ -1,8 +1,10 @@
 function checkDarkLightCookie() {
   if(document.cookie.split("; ").find(row => row.startsWith("dark"))) {
     document.getElementById("body").className = "dark";
+    document.getElementById("darklightswitch").textContent="switch to light mode";
   } else if(document.cookie.split("; ").find(row => row.startsWith("light"))) {
     document.getElementById("body").className = "light";
+    document.getElementById("darklightswitch").textContent="switch to dark mode";
   } else {
     const today = new Date();
     const tomorrow = new Date(today);
