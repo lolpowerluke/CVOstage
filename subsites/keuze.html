@@ -21,18 +21,75 @@
   </header>
   <article>
     <div>
-      <div class="grayheader">
+      <div class="grayheader even">
         <span>Kies jouw online tool</span>
+        <button onclick="resetQuestionList()" class="offsite">
+          <span>Herstart vragenlijst</span>
+        </button>
       </div>
       <div class="keuze">
-        <ul class="vragen">
-          <li>
-            <span>Wilt u een quiz maken?</span>
-            <button>Ja</button>
-            <button>Nee</button>
-          </li>
-        </ul>
-        <div class="list"></div>
+        <div>
+          <ul class="vragen">
+            <li id="quiz">
+              <span>Wilt u een quiz maken?</span>
+              <button onclick="quizYes()">Ja</button>
+              <button onclick="quizNo()">Nee</button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="list" id="tools-list">
+            <button class="tool card" onclick="location.href='../tools/Flippity/Flippity.html'" id="flippity">
+              <img src="../images/Flippity.jpg">
+              <div>
+                <p>Flippity</p>
+                <span>Flippity is een site waar je veel verschillende spelletjes gratis kan aanmaken via spreadsheats.</span>
+              </div>
+            </button>
+            <button class="tool card" onclick="location.href='../tools/Kahoot/Kahoot.html'" id="kahoot">
+              <img src="../images/kahoot.jpg">
+              <div>
+                <p>Kahoot</p>
+                <span>Kahoot is een site waar je gemakelijk en gratis quizzes kunt maken en starten.</span>
+              </div>
+            </button>
+            <button class="tool card" onclick="location.href='../tools/Wooclap/Wooclap.html'" id="wooclap">
+              <img src="../images/wooclap.jpg">
+              <div>
+                <p>Wooclap</p>
+                <span>Wooclap is een site waar u verschillende soorten oefeningen of testen kan maken.</span>
+              </div>
+            </button>
+            <button class="tool card" onclick="location.href='../tools/Seppo/Seppo.html'" id="seppo">
+              <img src="../images/seppo.png">
+              <div>
+                <p>Seppo</p>
+                <span>Seppo is een site waar je je les in een game kan veranderen.</span>
+              </div>
+            </button>
+            <button class="tool card" onclick="location.href='../tools/LessonUp/LessonUp.html'" id="lessonup">
+              <img src="../images/LessonUp.png">
+              <div>
+                <p>LessonUp</p>
+                <span>LessonUp is een site waar ja digitaal kan les geven.</span>
+              </div>
+            </button>
+            <button class="tool card" onclick="location.href='../tools/Quizlet/Quizlet.html'" id="quizlet">
+              <img src="../images/quizlet.png">
+              <div>
+                <p>Quizlet</p>
+                <span>Quizlet is een site waar je quizzes kan aanmaken.</span>
+              </div>
+            </button>
+            <button class="tool card" onclick="location.href='../tools/Actionbound/Actionbound.html'" id="actionbound">
+              <img src="../images/Actionbound.png">
+              <div>
+                <p>Actionbound</p>
+                <span>Actionbound is een site waar je dingen kan leren door op stap te gaan met uw gsm.</span>
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </article>

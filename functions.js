@@ -49,3 +49,19 @@ function darklight() {
     document.cookie="dark; expires=" + tomorrow + "; path=/";
   }
 }
+function quizYes() {
+  document.getElementById("quiz").classList.add("answered");
+  document.getElementById("lessonup").classList.add("dp-none");
+}
+function quizNo() {
+  document.getElementById("quiz").classList.add("answered");
+  document.getElementById("quizlet").classList.add("dp-none");
+}
+function resetQuestionList() {
+  Array.from(document.querySelectorAll('.dp-none')).forEach(function(el) {
+    el.classList.remove('dp-none');
+  });
+  Array.from(document.querySelectorAll('.answered')).forEach(function(el) {
+    el.classList.remove('answered');
+  });
+}
