@@ -410,13 +410,42 @@ button:hover {
   box-shadow: 0 0 5px var(--box-shadow);
   width: fit-content;
 }
+.addMembers {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+#classList {
+  margin-top: 5px;
+  padding-right: 5px;
+  overflow-y: scroll;
+}
+#classList::-webkit-scrollbar-track {
+  margin: 0;
+}
 #classList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   width: 100%;
-  list-style-type: disc;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 #classList li {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(0, 168, 204);
+  box-shadow: 0 0 5px var(--box-shadow);
+  align-items: center;
   width: 100%;
+  padding-left: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: fit-content;
 }
 #classList li button {
-  margin-left: 5px;
+  margin: 5px;
+}
+#body .error {
+  background-color: red;
 }

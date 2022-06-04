@@ -12,23 +12,37 @@ function checkDarkLightCookie() {
     document.cookie="dark; expires=" + tomorrow + "; path=/";
     document.getElementById("body").className = "dark";
   }
-  var list, i, switching, b, shouldSwitch;
-  list = document.getElementById("tools-list");
-  switching = true;
-  while (switching) {
-    switching = false;
-    b = list.getElementsByTagName("button");
-    for (i = 0; i < (b.length - 1); i++) {
-      shouldSwitch = false;
-      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-        shouldSwitch = true;
-        break;
+  var elementToolsList =  document.getElementById('tools-list');
+  if (typeof(elementToolsList) != 'undefined' && elementToolsList != null)
+  {
+    var list, i, switching, b, shouldSwitch;
+    list = document.getElementById("tools-list");
+    switching = true;
+    while (switching) {
+      switching = false;
+      b = list.getElementsByTagName("button");
+      for (i = 0; i < (b.length - 1); i++) {
+        shouldSwitch = false;
+        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        b[i].parentNode.insertBefore(b[i + 1], b[i]);
+        switching = true;
       }
     }
-    if (shouldSwitch) {
-      b[i].parentNode.insertBefore(b[i + 1], b[i]);
-      switching = true;
-    }
+  }
+  var elementAddmembers =  document.getElementById('classmemberinput');
+  if (typeof(elementAddmembers) != 'undefined' && elementAddmembers != null)
+  {
+    var memberInput = document.getElementById("classmemberinput");
+    memberInput.addEventListener("keydown", function (e) {
+      if (e.code === "Enter") {
+        addmember(e);
+      }
+    });
   }
 }
 function darklight() {
@@ -67,33 +81,47 @@ function resetQuestionList() {
 }
 let ArrayClass = [];
 function addmember() {
+  if(document.getElementById("classmemberinput").value == "") {
+    document.getElementById("classmemberinput").classList.add('error');
+  } else {
+    document.getElementById("classmemberinput").classList.remove('error');
+    document.getElementById('classList').innerHTML = '';
+    ArrayClass.push(document.getElementById("classmemberinput").value);
+    document.getElementById("classmemberinput").value = '';
+    let listElement = document.createElement('ul'),
+    numberOfListItems = ArrayClass.length,
+    listItem,
+    i;
+    document.getElementById("classList").appendChild(listElement);
+    for (i = 0; i < numberOfListItems; ++i) {
+      listItem = document.createElement('li');
+      listItem.innerHTML = ArrayClass[i];
+      listElement.appendChild(listItem);
+      var button = document.createElement("button");
+      listItem.appendChild(button);
+      button.innerHTML = "remove";
+      button.setAttribute("onclick","window.click(this);");
+      button.setAttribute("data-index", i);
+    }
+  }
+}
+function click(btn) {
+  let dataIndex = btn.getAttribute("data-index");
+  ArrayClass.splice(dataIndex, 1);
   document.getElementById('classList').innerHTML = '';
-  ArrayClass.push(document.getElementById("classmemberinput").value);
-  document.getElementById("classmemberinput").value = '';
-  // Make the list
   let listElement = document.createElement('ul'),
-
-  // Set up a loop that goes through the items in listItems one at a time
   numberOfListItems = ArrayClass.length,
   listItem,
   i;
-
-  // Add it to the page
   document.getElementById("classList").appendChild(listElement);
-
   for (i = 0; i < numberOfListItems; ++i) {
-    // Create an item for each one
     listItem = document.createElement('li');
-
-    // Add the item text
     listItem.innerHTML = ArrayClass[i];
-
-    // Add listItem to the listElement
     listElement.appendChild(listItem);
     var button = document.createElement("button");
     listItem.appendChild(button);
     button.innerHTML = "remove";
-    button.setAttribute("onclick","yes");
+    button.setAttribute("onclick","window.click(this);");
     button.setAttribute("data-index", i);
   }
 }
