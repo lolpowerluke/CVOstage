@@ -65,3 +65,35 @@ function resetQuestionList() {
     el.classList.remove('answered');
   });
 }
+let ArrayClass = [];
+function addmember() {
+  document.getElementById('classList').innerHTML = '';
+  ArrayClass.push(document.getElementById("classmemberinput").value);
+  document.getElementById("classmemberinput").value = '';
+  // Make the list
+  let listElement = document.createElement('ul'),
+
+  // Set up a loop that goes through the items in listItems one at a time
+  numberOfListItems = ArrayClass.length,
+  listItem,
+  i;
+
+  // Add it to the page
+  document.getElementById("classList").appendChild(listElement);
+
+  for (i = 0; i < numberOfListItems; ++i) {
+    // Create an item for each one
+    listItem = document.createElement('li');
+
+    // Add the item text
+    listItem.innerHTML = ArrayClass[i];
+
+    // Add listItem to the listElement
+    listElement.appendChild(listItem);
+    var button = document.createElement("button");
+    listItem.appendChild(button);
+    button.innerHTML = "remove";
+    button.setAttribute("onclick","yes");
+    button.setAttribute("data-index", i);
+  }
+}
