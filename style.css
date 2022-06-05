@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 :root {
   --box-shadow: rgb(100, 100, 100);
-  --scroll-track: rgb(0, 143, 226);
-  --scroll-thumb: rgb(0, 105, 153);
+  --scroll-track: rgb(218,0,55);
+  --scroll-thumb: rgb(23,23,23);
   --scroll-shadow: rgb(54, 54, 54);
 }
 .dark {
-  --main-bg: rgb(27, 38, 44);
-  --bg-1: rgb(15, 76, 117);
-  --bg-2: rgb(50, 130, 184);
-  --bg-3: rgb(187, 225, 250);
-  --btn-hover: rgb(50, 130, 184);
+  --main-bg: rgb(23,23,23);
+  --bg-1: rgb(218,0,55);
+  --bg-2: rgb(23,23,23);
+  --bg-3: rgb(68,68,68);
+  --btn-hover: rgb(23,23,23);
+  --grayheader: rgb(237,237,237);
 }
 .light {
   --main-bg: rgb(224, 252, 255);
@@ -18,11 +19,14 @@
   --bg-2: rgb(110, 182, 255);
   --bg-3: rgb(112, 152, 218);
   --btn-hover: rgb(110, 182, 255);
+  --grayheader: rgb(237,237,237);
 }
 * {
   font-family: 'Oxanium', cursive !important;
   color: black;
   transition: background-color .5s;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
 body {
   display: grid;
@@ -114,7 +118,7 @@ article > div {
   font-size: 20px;
   padding: 10px 0 10px 0;
   border-radius: 5px;
-  background-color: rgb(144, 161, 170);
+  background-color: var(--grayheader);
   box-shadow: 0 0 5px var(--box-shadow);
 }
 .grayheader.even {
@@ -245,6 +249,16 @@ button:hover {
     grid-template-rows: 1fr 1fr 1fr;
     row-gap: 5px;
   }
+  .grayheader.one {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+  }
+  #body .teams > div:first-child > div {
+    flex-direction: column;
+  }
+  #body .teams button {
+    width: calc(100% - 10px);
+  }
   #body .grayheader > * {
     justify-self: center;
   }
@@ -261,6 +275,9 @@ button:hover {
     grid-column: 1/2;
     grid-row: 3/4;
     margin: 0;
+  }
+  #classList {
+    max-height: calc(100vh - 315px);
   }
 }
 .explantation li div {
@@ -395,7 +412,7 @@ button:hover {
 .teams > div:first-child > div {
   display: flex;
   flex-direction: row;
-  column-gap: 5px;
+  gap: 5px;
 }
 .teams input {
   all: unset;
@@ -410,6 +427,9 @@ button:hover {
   box-shadow: 0 0 5px var(--box-shadow);
   width: fit-content;
 }
+.teams button:hover {
+  background-color: var(--btn-hover);
+}
 .addMembers {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -418,6 +438,7 @@ button:hover {
   margin-top: 5px;
   padding-right: 5px;
   overflow-y: scroll;
+  height: calc(100vh - 285px);
 }
 #classList::-webkit-scrollbar-track {
   margin: 0;
@@ -434,7 +455,7 @@ button:hover {
 #classList li {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(0, 168, 204);
+  background-color: var(--bg-3);
   box-shadow: 0 0 5px var(--box-shadow);
   align-items: center;
   width: 100%;
@@ -442,6 +463,7 @@ button:hover {
   border-radius: 5px;
   box-sizing: border-box;
   height: fit-content;
+  color: white;
 }
 #classList li button {
   margin: 5px;
