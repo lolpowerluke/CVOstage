@@ -259,6 +259,9 @@ button:hover {
   #body .teams button {
     width: calc(100% - 10px);
   }
+  #body .teams ul button {
+    width: fit-content;
+  }
   #body .grayheader > * {
     justify-self: center;
   }
