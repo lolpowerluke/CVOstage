@@ -29,6 +29,7 @@
   transition: background-color .5s, color .5s;
   scrollbar-width: thin;
   scrollbar-color: var(--scroll-track) var(--scroll-thumb);
+  box-sizing: border-box;
 }
 body {
   display: grid;
@@ -298,8 +299,8 @@ input[type=number]::-webkit-inner-spin-button {
     grid-row: 3/4;
     margin: 0;
   }
-  #classList {
-    max-height: calc(100vh - 315px);
+  #classList ul {
+    max-height: calc(100vh - 325px);
   }
 }
 .explantation li div {
@@ -429,6 +430,8 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: var(--bg-2);
   border-radius: 5px;
   box-shadow: 0 0 5px var(--box-shadow);
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 .teams > div:first-child > div {
   display: flex;
@@ -451,16 +454,12 @@ input[type=number]::-webkit-inner-spin-button {
 .teams button:hover {
   background-color: var(--btn-hover);
 }
-.addMembers {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
 .addMembers > div:first-child {
   margin: 5px;
   margin-bottom: 0;
 }
 #classList {
-  margin-right: 5px;
+  margin: 5px;
 }
 #classList ul {
   display: flex;
@@ -470,9 +469,9 @@ input[type=number]::-webkit-inner-spin-button {
   height: 100%;
   padding: 0;
   margin: 0;
-  padding-right: 5px;
+  padding-right: 8px;
   overflow-y: scroll;
-  height: calc(100vh - 275px);
+  height: calc(100vh - 285px);
 }
 #classList li {
   display: flex;
@@ -507,4 +506,41 @@ input[type=number]::-webkit-inner-spin-button {
   column-gap: 5px;
   margin: 5px;
   margin-bottom: 0;
+}
+#teamsList {
+  max-height: calc(100vh - 285px);
+  overflow-y: scroll;
+  margin: 5px;
+}
+#teamsList > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0;
+}
+#teamsList > div ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  background-color: var(--bg-3);
+  box-shadow: 0 0 5px var(--box-shadow);
+  flex: 1 0 150px;
+  max-width: 200px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 3px;
+  padding: 0;
+}
+#teamsList > div ul span {
+  background-color: var(--bg-1);
+  box-shadow: 0 0 5px var(--box-shadow);
+  margin: 5px;
+  padding: 5px;
+  width: calc(100% - 10px);
+  border-radius: 5px;
+}
+#teamsList > div ul li:last-child {
+  margin-bottom: 5px;
 }

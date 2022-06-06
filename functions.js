@@ -149,15 +149,19 @@ function switchTeamsMode() {
   }
 }
 function createTeams() {
+  var ArrayClassShuffle = [];
+  for (var i in ArrayClass) {
+    ArrayClassShuffle.push(ArrayClass[i]);
+  }
   var elementTeamsizeInput =  document.getElementById('teamInput');
   if (typeof(elementTeamsizeInput) != 'undefined' && elementTeamsizeInput != null) {
     var teamSize = document.getElementById("teamInput").value;
     if (document.getElementById("teamsMode").classList.contains("teamModeSize")) {
-      var ArrayClassShuffle = shuffle(ArrayClass);
+      ArrayClassShuffle = shuffle(ArrayClassShuffle);
       var groups = [];
       var numPeople = ArrayClassShuffle.length;
       var groupNum = Number(document.getElementById("teamInput").value);
-      var numGroups = (numPeople / groupNum) - 1.0;
+      var numGroups = (numPeople / groupNum);
       var personIndex = 0;
       while (numGroups > 0.0) {
         var newGroup = [];
@@ -168,7 +172,7 @@ function createTeams() {
           }
         }
         else {
-          for ( i = groupNum ; i > 0 ; i-- ) {
+          for ( i = groupNum; i > 0; i-- ) {
             newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
             personIndex++;
           }
@@ -177,7 +181,7 @@ function createTeams() {
         numGroups--;
       }
     } else if (document.getElementById("teamsMode").classList.contains("teamModeAmount")) {
-      var ArrayClassShuffle = shuffle(ArrayClass);
+      ArrayClassShuffle = shuffle(ArrayClassShuffle);
       var groups = [];
       var numPeople = ArrayClassShuffle.length;
       var groupNum = Number(document.getElementById("teamInput").value);
@@ -192,7 +196,7 @@ function createTeams() {
           }
         }
         else {
-        for (var i = peoplePerGroup ; i > 0 ; i-- ) {
+        for (var i = peoplePerGroup; i > 0; i-- ) {
           newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
           personIndex++;
         }
@@ -203,22 +207,21 @@ function createTeams() {
     }
     document.getElementById('teamsList').innerHTML = '';
     let divElementGroups = document.createElement("div"),
-    numberOfulListItems = groups.length,
-    ulListItemGroups = document.createElement("ul"),
-    listItemGroups = document.createElement("li"),
-    elementTitleGroups = document.createElement("span");
+    numberOfulListItems = groups.length;
     document.getElementById("teamsList").appendChild(divElementGroups);
     for (var i = 0; i < numberOfulListItems; i++) {
+      let ulListItemGroups = document.createElement("ul"),
+      elementTitleGroups = document.createElement("span");
       divElementGroups.appendChild(ulListItemGroups);
       ulListItemGroups.appendChild(elementTitleGroups);
-      elementTitleGroups.textContent = "Groep" + i;
+      elementTitleGroups.textContent = "Groep " + (i + 1);
       for (var j = 0; j < groups[i].length; j++) {
-        listItemGroups.innerHTML = ArrayClass[i][j];
+        let listItemGroups = document.createElement("li");
+        listItemGroups.innerHTML = groups[i][j]; //ArrayClass[i][j];
         ulListItemGroups.appendChild(listItemGroups);
       }
     }
   }
-  console.log(groups);
 }
 function shuffle(o){
   for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
