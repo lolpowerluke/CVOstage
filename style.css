@@ -1,30 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 :root {
   --box-shadow: rgb(100, 100, 100);
-  --scroll-track: rgb(218,0,55);
-  --scroll-thumb: rgb(23,23,23);
   --scroll-shadow: rgb(54, 54, 54);
 }
 .dark {
-  --main-bg: rgb(23,23,23);
-  --bg-1: rgb(218,0,55);
-  --bg-2: rgb(23,23,23);
-  --bg-3: rgb(68,68,68);
-  --btn-hover: rgb(23,23,23);
+  --main-bg: rgb(37, 37, 37);
+  --bg-1: rgb(255, 45, 45);
+  --bg-2: rgb(41, 41, 41);
+  --bg-3: rgb(65, 65, 65);
+  --btn-hover: rgb(206, 0, 0);
   --grayheader: rgb(237,237,237);
+  --scroll-track: var(--bg-1);
+  --scroll-thumb: var(--bg-2);
 }
 .light {
-  --main-bg: rgb(224, 252, 255);
-  --bg-1: rgb(144, 242, 255);
-  --bg-2: rgb(110, 182, 255);
-  --bg-3: rgb(112, 152, 218);
-  --btn-hover: rgb(110, 182, 255);
-  --grayheader: rgb(237,237,237);
+  --main-bg: rgb(230, 230, 230);
+  --bg-1: rgb(255, 89, 89);
+  --bg-2: rgb(173, 173, 173);
+  --bg-3: rgb(65, 65, 65);
+  --btn-hover: rgb(209, 52, 52);
+  --grayheader: rgb(85, 85, 85);
+  --scroll-track: var(--bg-1);
+  --scroll-thumb: var(--bg-2);
 }
 * {
   font-family: 'Oxanium', cursive !important;
   color: black;
-  transition: background-color .5s;
+  transition: background-color .5s, color .5s;
   scrollbar-width: thin;
   scrollbar-color: var(--scroll-track) var(--scroll-thumb);
 }
@@ -108,6 +110,15 @@ article > div {
   background-color: var(--scroll-thumb);
   cursor: move;
 }
+.light .grayheader span {
+  color: white;
+}
+.dark .grayheader span {
+  color: black;
+}
+.dark #teamsMode {
+  color: white;
+}
 .grayheader {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -129,6 +140,7 @@ article > div {
 }
 .grayheader button {
   background-color: var(--bg-3);
+  color: white;
 }
 .grayheader button.back {
   grid-column: 1/2;
@@ -154,6 +166,9 @@ button {
 button:hover {
   background-color: var(--btn-hover);
   box-shadow: 0 0 3px var(--box-shadow);
+}
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 .tool.card {
   display: grid;
@@ -411,7 +426,6 @@ button:hover {
 }
 .teams > div {
   margin: 5px;
-  padding: 5px;
   background-color: var(--bg-2);
   border-radius: 5px;
   box-shadow: 0 0 5px var(--box-shadow);
@@ -441,14 +455,12 @@ button:hover {
   display: grid;
   grid-template-rows: auto 1fr;
 }
-#classList {
-  margin-top: 5px;
-  padding-right: 5px;
-  overflow-y: scroll;
-  height: calc(100vh - 285px);
+.addMembers > div:first-child {
+  margin: 5px;
+  margin-bottom: 0;
 }
-#classList::-webkit-scrollbar-track {
-  margin: 0;
+#classList {
+  margin-right: 5px;
 }
 #classList ul {
   display: flex;
@@ -458,6 +470,9 @@ button:hover {
   height: 100%;
   padding: 0;
   margin: 0;
+  padding-right: 5px;
+  overflow-y: scroll;
+  height: calc(100vh - 275px);
 }
 #classList li {
   display: flex;
@@ -465,16 +480,31 @@ button:hover {
   background-color: var(--bg-3);
   box-shadow: 0 0 5px var(--box-shadow);
   align-items: center;
-  width: 100%;
+  width: calc(100% - 5px);
   padding-left: 10px;
+  margin-left: 5px;
   border-radius: 5px;
   box-sizing: border-box;
   height: fit-content;
   color: white;
+}
+#classList li:first-child {
+  margin-top: 5px;
+}
+#classList li:last-child {
+  margin-bottom: 5px;
 }
 #classList li button {
   margin: 5px;
 }
 #body .error {
   background-color: red;
+}
+.createTeams > div:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 5px;
+  margin: 5px;
+  margin-bottom: 0;
 }

@@ -21,8 +21,9 @@
   </header>
   <article>
     <div>
-      <div class="grayheader one">
+      <div class="grayheader even">
         <span>Verdeel uw klas in groepen</span>
+        <button id="switchTeamMode" onclick="switchTeamsMode()" class="offsite">switch naar aantal teams</button>
       </div>
       <div class="teams">
         <div class="addMembers">
@@ -32,7 +33,15 @@
           </div>
           <div id="classList"></div>
         </div>
-        <div class="createTeams"></div>
+        <div class="createTeams">
+          <div>
+            <span id="teamsMode" class="teamModeSize">Teamgrootte:</span>
+            <input id="teamInput" type="number">
+            <button onclick="createTeams()">Maak teams</button>
+          </div>
+          <div id="teamsList">
+          </div>
+        </div>
       </div>
     </div>
   </article>
