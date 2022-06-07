@@ -153,11 +153,11 @@ function createTeams() {
   for (var i in ArrayClass) {
     ArrayClassShuffle.push(ArrayClass[i]);
   }
-  var elementTeamsizeInput =  document.getElementById("teamInput");
-  if (elementTeamsizeInput.value < 1 || elementTeamsizeInput.value == "" || elementTeamsizeInput.innerHTML.includes(",") || elementTeamsizeInput.innerHTML.includes(".")) {
+  if (document.getElementById("teamInput").value < 1 || document.getElementById("teamInput").value == "" || document.getElementById("teamInput").value.includes(",") || document.getElementById("teamInput").value.includes(".")) {
     document.getElementById("teamInput").classList.add("error");
   } else {
     document.getElementById("teamInput").classList.remove("error");
+    var elementTeamsizeInput =  document.getElementById("teamInput");
     if (typeof(elementTeamsizeInput) != 'undefined' && elementTeamsizeInput != null) {
       var teamSize = document.getElementById("teamInput").value;
       if (document.getElementById("teamsMode").classList.contains("teamModeSize")) {
