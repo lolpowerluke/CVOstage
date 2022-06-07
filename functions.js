@@ -88,7 +88,7 @@ function resetQuestionList() {
 }
 let ArrayClass = [];
 function addmember() {
-  if(document.getElementById("classmemberinput").value == "") {
+  if(document.getElementById("classmemberinput").value == "" || !document.getElementById("classmemberinput").value.replace(/\s/g, "")) {
     document.getElementById("classmemberinput").classList.add('error');
   } else {
     document.getElementById("classmemberinput").classList.remove('error');
@@ -153,72 +153,77 @@ function createTeams() {
   for (var i in ArrayClass) {
     ArrayClassShuffle.push(ArrayClass[i]);
   }
-  var elementTeamsizeInput =  document.getElementById('teamInput');
-  if (typeof(elementTeamsizeInput) != 'undefined' && elementTeamsizeInput != null) {
-    var teamSize = document.getElementById("teamInput").value;
-    if (document.getElementById("teamsMode").classList.contains("teamModeSize")) {
-      ArrayClassShuffle = shuffle(ArrayClassShuffle);
-      var groups = [];
-      var numPeople = ArrayClassShuffle.length;
-      var groupNum = Number(document.getElementById("teamInput").value);
-      var numGroups = (numPeople / groupNum);
-      var personIndex = 0;
-      while (numGroups > 0.0) {
-        var newGroup = [];
-        if ( numGroups < 1.0 ) {
-          while( personIndex < numPeople ) {
-            newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
-          personIndex++;
+  var elementTeamsizeInput =  document.getElementById("teamInput");
+  if (elementTeamsizeInput.value < 1 || elementTeamsizeInput.value == "" || elementTeamsizeInput.innerHTML.includes(",") || elementTeamsizeInput.innerHTML.includes(".")) {
+    document.getElementById("teamInput").classList.add("error");
+  } else {
+    document.getElementById("teamInput").classList.remove("error");
+    if (typeof(elementTeamsizeInput) != 'undefined' && elementTeamsizeInput != null) {
+      var teamSize = document.getElementById("teamInput").value;
+      if (document.getElementById("teamsMode").classList.contains("teamModeSize")) {
+        ArrayClassShuffle = shuffle(ArrayClassShuffle);
+        var groups = [];
+        var numPeople = ArrayClassShuffle.length;
+        var groupNum = Number(document.getElementById("teamInput").value);
+        var numGroups = (numPeople / groupNum);
+        var personIndex = 0;
+        while (numGroups > 0.0) {
+          var newGroup = [];
+          if ( numGroups < 1.0 ) {
+            while( personIndex < numPeople ) {
+              newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
+            personIndex++;
+            }
           }
+          else {
+            for ( i = groupNum; i > 0; i-- ) {
+              newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
+              personIndex++;
+            }
+          }
+          groups[groups.length] = newGroup;
+          numGroups--;
         }
-        else {
-          for ( i = groupNum; i > 0; i-- ) {
+      } else if (document.getElementById("teamsMode").classList.contains("teamModeAmount")) {
+        ArrayClassShuffle = shuffle(ArrayClassShuffle);
+        var groups = [];
+        var numPeople = ArrayClassShuffle.length;
+        var groupNum = Number(document.getElementById("teamInput").value);
+        var peoplePerGroup = Math.floor( numPeople / groupNum );
+        var personIndex = 0;
+        while (groupNum > 0.0) {
+          var newGroup = [];
+          if ( groupNum <= 1.0 ) {
+            while( personIndex < numPeople ) {
+              newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
+              personIndex++;
+            }
+          }
+          else {
+          for (var i = peoplePerGroup; i > 0; i-- ) {
             newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
             personIndex++;
           }
-        }
-        groups[groups.length] = newGroup;
-        numGroups--;
-      }
-    } else if (document.getElementById("teamsMode").classList.contains("teamModeAmount")) {
-      ArrayClassShuffle = shuffle(ArrayClassShuffle);
-      var groups = [];
-      var numPeople = ArrayClassShuffle.length;
-      var groupNum = Number(document.getElementById("teamInput").value);
-      var peoplePerGroup = Math.floor( numPeople / groupNum );
-      var personIndex = 0;
-      while (groupNum > 0.0) {
-        var newGroup = [];
-        if ( groupNum <= 1.0 ) {
-          while( personIndex < numPeople ) {
-            newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
-            personIndex++;
           }
+          groups[groups.length] = newGroup;
+          groupNum--;
         }
-        else {
-        for (var i = peoplePerGroup; i > 0; i-- ) {
-          newGroup[newGroup.length] = ArrayClassShuffle[personIndex];
-          personIndex++;
-        }
-        }
-        groups[groups.length] = newGroup;
-        groupNum--;
       }
-    }
-    document.getElementById('teamsList').innerHTML = '';
-    let divElementGroups = document.createElement("div"),
-    numberOfulListItems = groups.length;
-    document.getElementById("teamsList").appendChild(divElementGroups);
-    for (var i = 0; i < numberOfulListItems; i++) {
-      let ulListItemGroups = document.createElement("ul"),
-      elementTitleGroups = document.createElement("span");
-      divElementGroups.appendChild(ulListItemGroups);
-      ulListItemGroups.appendChild(elementTitleGroups);
-      elementTitleGroups.textContent = "Groep " + (i + 1);
-      for (var j = 0; j < groups[i].length; j++) {
-        let listItemGroups = document.createElement("li");
-        listItemGroups.innerHTML = groups[i][j]; //ArrayClass[i][j];
-        ulListItemGroups.appendChild(listItemGroups);
+      document.getElementById('teamsList').innerHTML = '';
+      let divElementGroups = document.createElement("div"),
+      numberOfulListItems = groups.length;
+      document.getElementById("teamsList").appendChild(divElementGroups);
+      for (var i = 0; i < numberOfulListItems; i++) {
+        let ulListItemGroups = document.createElement("ul"),
+        elementTitleGroups = document.createElement("span");
+        divElementGroups.appendChild(ulListItemGroups);
+        ulListItemGroups.appendChild(elementTitleGroups);
+        elementTitleGroups.textContent = "Groep " + (i + 1);
+        for (var j = 0; j < groups[i].length; j++) {
+          let listItemGroups = document.createElement("li");
+          listItemGroups.innerHTML = groups[i][j]; //ArrayClass[i][j];
+          ulListItemGroups.appendChild(listItemGroups);
+        }
       }
     }
   }
