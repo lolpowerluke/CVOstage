@@ -26,7 +26,7 @@
 * {
   font-family: 'Oxanium', cursive !important;
   color: black;
-  transition: background-color .5s, color .5s;
+  transition: background-color .5s, color .5s, box-shadow .5s;
   scrollbar-width: thin;
   scrollbar-color: var(--scroll-track) var(--scroll-thumb);
   box-sizing: border-box;
@@ -150,7 +150,6 @@ button {
   cursor: pointer;
   padding: 5px;
   border-radius: 5px;
-  transition: background-color .3s, box-shadow .3s;
 }
 button:hover {
   background-color: var(--btn-hover);
@@ -180,12 +179,19 @@ input[type=number]::-webkit-inner-spin-button {
   align-self: center;
   justify-self: center;
 }
-.tool.card span {
+.dark .tool.card span {
   color: white;
 }
-.tool.card p {
+.light .tool.card span {
+  color: black;
+}
+.dark .tool.card p {
   font-size: 18px;
   color: white;
+}
+.light .tool.card p {
+  font-size: 18px;
+  color: black;
 }
 .explantation {
   display: flex;
@@ -359,6 +365,12 @@ input[type=number]::-webkit-inner-spin-button {
   box-shadow: 0 0 5px var(--box-shadow);
   background-color: var(--bg-1);
 }
+.dark .keuze .vragen li > * {
+  color: white;
+}
+.light .keuze .vragen li > * {
+  color: black;
+}
 .keuze .vragen li:last-child {
   margin-right: 5px;
 }
@@ -391,7 +403,7 @@ input[type=number]::-webkit-inner-spin-button {
   margin-bottom: 0;
 }
 .keuze .list .tool.card {
-  background-color: var(--bg-3);
+  background-color: var(--bg-1);
 }
 .answered {
   opacity: .7;
@@ -476,12 +488,6 @@ input[type=number]::-webkit-inner-spin-button {
 .light #classList li {
   color: black;
 }
-/* #classList li:first-child {
-  margin-top: 5px;
-}
-#classList li:last-child {
-  margin-bottom: 5px;
-} */
 #classList li button {
   margin: 5px;
   background-color: var(--bg-3);
