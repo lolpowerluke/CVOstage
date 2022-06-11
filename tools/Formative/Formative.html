@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wooclap | Kies jouw online tool</title>
+  <meta charset="UTF-8">
+  <link rel="icon" href="../../images/wooclap.jpg" type="image/jpg">
+  <meta name="author" content="lolpowerluke">
+  <link href="../../style.css" rel="stylesheet">
+  <script src="../../functions.js"></script>
+</head>
+<body class="dark" onload="checkDarkLightCookie()" id="body">
+  <header>
+    <button onclick="location.href='../../home.html'">
+      <span>Home</span>
+    </button>
+    <button onclick="location.href='../../subsites/keuze.html'">
+      <span>Kies jouw online tool</span>
+    </button>
+    <button onclick="location.href='../../subsites/teams.html'">
+      <span>Maak groepen</span>
+    </button>
+  </header>
+  <article>
+    <div>
+      <div class="grayheader even">
+        <span>Hoe gebruik ik Formative?</span>
+        <button onclick="window.open('https://www.formative.com/')" class="offsite">
+          <span>Breng mij naar Formative.</span>
+        </button>
+      </div>
+      <div class="list choice">
+          <button class="card" onclick="location.href='Subsites/Account.html'">
+            <span>Hoe maak ik een account aan?</span>
+          </button>
+          <button class="card" onclick="location.href='Subsites/Quiz.html'">
+            <span>Hoe maak ik een quiz?</span>
+          </button>
+      </div>
+    </div>
+  </article>
+  <footer>
+    <button onclick="darklight()">
+      <span id="darklightswitch">switch to light mode</span>
+    </button>
+  </footer>
+</body>
+</html>

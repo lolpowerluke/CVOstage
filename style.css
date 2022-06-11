@@ -260,6 +260,14 @@ input[type=number]::-webkit-inner-spin-button {
     grid-template-rows: 1fr 1fr 1fr;
     row-gap: 5px;
   }
+  .grayheader.even {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .grayheader.even button.offsite {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
   .grayheader.one {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: 1fr;
@@ -290,8 +298,20 @@ input[type=number]::-webkit-inner-spin-button {
     grid-row: 3/4;
     margin: 0;
   }
-  #classList ul {
-    max-height: calc(100vh - 325px);
+  body #teamsList,
+  body #classList {
+    max-height: calc(100vh - 330px);
+  }
+  body .createTeams > div:first-child {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  #body .teams button {
+    text-align: center;
+  }
+  body .createTeams > div:first-child button {
+    grid-row: 2/3;
+    grid-column: 1/3;
   }
 }
 .explantation li div {
@@ -392,12 +412,14 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 0;
   padding-bottom: 5px;
 }
+.keuze > div:last-child > div {
+  overflow-y: scroll;
+  height: 100%;
+  margin-right: 5px;
+  padding-right: 2px;
+}
 .keuze .list {
   margin: 0;
-  margin-right: 3px;
-  padding-right: 2px;
-  overflow-y: scroll;
-  height: calc(100% - 5px);
 }
 .keuze .list::-webkit-scrollbar-track {
   margin-bottom: 0;
@@ -506,7 +528,7 @@ input[type=number]::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  column-gap: 5px;
+  gap: 5px;
   margin: 5px;
   margin-bottom: 0;
 }
