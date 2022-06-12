@@ -165,7 +165,7 @@ input[type=number]::-webkit-inner-spin-button {
   align-self: stretch;
   text-align: center;
   column-gap: 10px;
-  flex: 1 0 500px;
+  flex: 1 1 500px;
   max-width: 700px;
   background-color: var(--bg-2);
   padding: 5px;
@@ -281,7 +281,7 @@ input[type=number]::-webkit-inner-spin-button {
     grid-row: 2/3;
   }
   .grayheader.one {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
   #body .teams > div:first-child > div {
