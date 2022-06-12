@@ -226,6 +226,9 @@ input[type=number]::-webkit-inner-spin-button {
   height: fit-content;
   width: 100%;
 }
+.explantation > button {
+  width: calc(100% - 10px);
+}
 .explantation li.smallimg,
 .explantation.small-img > button,
 .explantation.small-img li {
