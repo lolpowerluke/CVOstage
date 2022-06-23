@@ -610,7 +610,7 @@ html .pro-feature {
   pointer-events: none;
 }
 .WIP::after {
-  content: "Work In Progress";
+  content: "Work In Progress.";
   font-size: 25px;
   display: flex;
   align-self: center;
