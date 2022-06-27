@@ -30,10 +30,60 @@
       <div class="keuze">
         <div>
           <ul class="vragen">
-            <li id="quiz">
-              <span>Wilt u een quiz maken?</span>
-              <button onclick="quizYes()">Ja</button>
-              <button onclick="quizNo()">Nee</button>
+            <li id="kennis">
+              <span>Is je doel om kennis te testen?</span>
+              <button onclick="kennisYes()">Ja</button>
+              <button onclick="kennisNo()">Nee</button>
+            </li>
+            <li id="score" class="question-dp-none">
+              <span>Wil je score bijhouden tijdens het toetsen?</span>
+              <button onclick="scoreYes()">Ja</button>
+              <button onclick="scoreNo()">Nee</button>
+            </li>
+            <li id="brainstorm" class="question-dp-none">
+              <span>Is je doel om te brainstormen of structureren?</span>
+              <button onclick="brainstormYes()">Ja</button>
+              <button onclick="brainstormNo()">Nee</button>
+            </li>
+            <li id="meerkeuzevragen" class="question-dp-none">
+              <span>Zijn meerkeuzevragen voldoende?</span>
+              <button onclick="meerkeuzevragenYes()">Ja</button>
+              <button onclick="meerkeuzevragenNo()">Nee</button>
+            </li>
+            <li id="interactief" class="question-dp-none">
+              <span>Wil je een interactief spel op de beamer?</span>
+              <button onclick="interactiefYes()">Ja</button>
+              <button onclick="interactiefNo()">Nee</button>
+            </li>
+            <li id="spelvorm" class="question-dp-none">
+              <span>Wil je de kennis in spelvorm toetsen?</span>
+              <button onclick="spelvormYes()">Ja</button>
+              <button onclick="spelvormNo()">Nee</button>
+            </li>
+            <li id="samenwerken" class="question-dp-none">
+              <span>Wil je dat leerlingen samenwerken?</span>
+              <button onclick="samenwerkenYes()">Ja</button>
+              <button onclick="samenwerkenNo()">Nee</button>
+            </li>
+            <li id="presentatie" class="question-dp-none">
+              <span>Wil je een presentatie maken of input geven?</span>
+              <button onclick="presentatieYes()">Ja</button>
+              <button onclick="presentatieNo()">Nee</button>
+            </li>
+            <li id="animatie" class="question-dp-none">
+              <span>Wil je een animatiefilmpje maken?</span>
+              <button onclick="animatieYes()">Ja</button>
+              <button onclick="animatieNo()">Nee</button>
+            </li>
+            <li id="interactief" class="question-dp-none">
+              <span>Wil je een video interactief maken met vragen?</span>
+              <button onclick="interactiefVideoYes()">Ja</button>
+              <button onclick="interactiefVideoNo()">Nee</button>
+            </li>
+            <li id="speurtocht" class="question-dp-none">
+              <span>Wil je een online speurtocht doen?</span>
+              <button onclick="speurtochtYes()">Ja</button>
+              <button onclick="speurtochtNo()">Nee</button>
             </li>
           </ul>
         </div>
@@ -247,6 +297,20 @@
                 <img src="../images/Plickers.png">
                 <div>
                   <p>Plickers</p>
+                  <span>...</span>
+                </div>
+              </button>
+              <button class="tool card" onclick="location.href='../tools/Formative/Formative.html'" id="formative">
+                <img src="../images/Formative.png">
+                <div>
+                  <p>Formative</p>
+                  <span>Formative waar je testen kan maken om de leerlingen te toetsen.</span>
+                </div>
+              </button>
+              <button class="tool card WIP" onclick="location.href='../tools/Quizizz/Quizizz.html'" id="quizizz">
+                <img src="../images/Quizizz.png">
+                <div>
+                  <p>Quizizz</p>
                   <span>...</span>
                 </div>
               </button>

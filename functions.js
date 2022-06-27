@@ -70,14 +70,6 @@ function darklight() {
     document.cookie="dark; expires=" + tomorrow + "; path=/";
   }
 }
-function quizYes() {
-  document.getElementById("quiz").classList.add("answered");
-  document.getElementById("lessonup").classList.add("dp-none");
-}
-function quizNo() {
-  document.getElementById("quiz").classList.add("answered");
-  document.getElementById("quizlet").classList.add("dp-none");
-}
 function resetQuestionList() {
   Array.from(document.querySelectorAll('.dp-none')).forEach(function(el) {
     el.classList.remove('dp-none');
@@ -85,6 +77,16 @@ function resetQuestionList() {
   Array.from(document.querySelectorAll('.answered')).forEach(function(el) {
     el.classList.remove('answered');
   });
+  document.getElementById("score").className = "question-dp-none";
+  document.getElementById("brainstorm").className = "question-dp-none";
+  document.getElementById("meerkeuzevragen").className = "question-dp-none";
+  document.getElementById("interactief").className = "question-dp-none";
+  document.getElementById("spelvorm").className = "question-dp-none";
+  document.getElementById("samenwerken").className = "question-dp-none";
+  document.getElementById("presentatie").className = "question-dp-none";
+  document.getElementById("animatie").className = "question-dp-none";
+  document.getElementById("interactief").className = "question-dp-none";
+  document.getElementById("speurtocht").className = "question-dp-none";
 }
 let ArrayClass = [];
 function addmember() {
@@ -231,4 +233,70 @@ function createTeams() {
 function shuffle(o){
   for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
   return o;
-};
+}
+function kennisYes() {
+  document.getElementById("kennis").classList.add("answered");
+  document.getElementById("score").classList.remove("question-dp-none");
+  document.getElementById("canva").classList.add("dp-none");
+  document.getElementById("thinglink").classList.add("dp-none");
+  document.getElementById("padlet").classList.add("dp-none");
+  document.getElementById("actionbound").classList.add("dp-none");
+  document.getElementById("nearpod").classList.add("dp-none");
+  document.getElementById("lessonup").classList.add("dp-none");
+  document.getElementById("mentimeter").classList.add("dp-none");
+  document.getElementById("powtoon").classList.add("dp-none");
+  document.getElementById("plicktochart").classList.add("dp-none");
+}
+function scoreYes() {
+  document.getElementById("score").classList.add("answered");
+  document.getElementById("meerkeuzevragen").classList.remove("question-dp-none");
+  document.getElementById("kahoot").classList.add("dp-none");
+  document.getElementById("quizlet").classList.add("dp-none");
+}
+function scoreNo() {
+  document.getElementById("score").classList.add("answered");
+  document.getElementById("interactief").classList.remove("question-dp-none");
+  document.getElementById("quizizz").classList.add("dp-none");
+}
+function meerkeuzevragenYes() {
+  document.getElementById("meerkeuzevragen").classList.add("answered");
+  document.getElementById("formative").classList.add("dp-none");
+  document.getElementById("googleForms").classList.add("dp-none");
+}
+function meerkeuzevragenNo() {
+  document.getElementById("meerkeuzevragen").classList.add("answered");
+  document.getElementById("quizizz").classList.add("dp-none");
+}
+function kennisNo() {
+  document.getElementById("kennis").classList.add("answered");
+  document.getElementById("brainstorm").classList.remove("question-dp-none");
+  document.getElementById("quizlet").classList.add("dp-none");
+  document.getElementById("kahoot").classList.add("dp-none");
+  document.getElementById("quizizz").classList.add("dp-none");
+  document.getElementById("formative").classList.add("dp-none");
+  document.getElementById("googleForms").classList.add("dp-none");
+  document.getElementById("quizlet").classList.add("dp-none");
+}
+function brainstormYes() {
+  document.getElementById("brainstorm").classList.add("answered");
+  document.getElementById("samenwerken").classList.remove("question-dp-none");
+  document.getElementById("nearpod").classList.add("dp-none");
+  document.getElementById("lessonup").classList.add("dp-none");
+  document.getElementById("mentimeter").classList.add("dp-none");
+  document.getElementById("powtoon").classList.add("dp-none");
+  document.getElementById("actionbound").classList.add("dp-none");
+}
+function brainstormNo() {
+  document.getElementById("brainstorm").classList.add("answered");
+  document.getElementById("presentatie").classList.remove("question-dp-none");
+  document.getElementById("canva").classList.add("dp-none");
+  document.getElementById("plicktochart").classList.add("dp-none");
+  document.getElementById("thinglink").classList.add("dp-none");
+  document.getElementById("padlet").classList.add("dp-none");
+}
+function samenwerkenYes() {
+  document.getElementById("samenwerken").classList.add("answered");
+  document.getElementById("canva").classList.add("dp-none");
+  document.getElementById("plicktochart").classList.add("dp-none");
+  document.getElementById("thinglink").classList.add("dp-none");
+}
